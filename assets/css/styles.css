@@ -1,15 +1,28 @@
 * {
   box-sizing: border-box;
+  vertical-align: bottom;
 }
 html {
   font-size: 62.5%;
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
+
+  background: #000;
 }
 /* common */
+.line-clap {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 4);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* word-break: break-all; */
+}
 a {
   text-decoration: none;
 }
@@ -32,6 +45,10 @@ a {
   font-weight: 600;
   line-height: 2.8rem;
 }
+.btn:hover {
+  background-color: #ffb900;
+  transition: 0.1s;
+}
 /* header */
 .header {
   padding-top: 26px;
@@ -44,6 +61,7 @@ a {
 .header.fixed {
   position: sticky;
   top: -26px;
+  z-index: 1;
 }
 .navigation ul {
   display: flex;
@@ -88,6 +106,155 @@ a {
 .hero-wrap {
   background-color: #fffcf4;
 }
-.hero-wrap .content {
+.hero-wrap .main-content {
   height: calc(100vh - 94px);
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+.hero-wrap .body {
+  display: flex;
+  align-items: center;
+}
+/* media block */
+.hero-wrap .media-block {
+  width: 48.5%;
+  position: relative;
+}
+.hero-wrap .media-block .img {
+  width: 470px;
+  height: 685px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.hero-wrap .hero-summary {
+  position: absolute;
+  bottom: 48px;
+  left: 300px;
+  background-color: #fff;
+  min-width: 270px;
+  border-radius: 12px;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+.hero-summary .info .label {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+}
+.hero-summary .info .title {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+.hero-wrap .hero-summary .item {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  padding: 11px 0;
+}
+.hero-wrap .hero-summary .item:first-child {
+  padding-top: 28px;
+}
+.hero-wrap .hero-summary .item:last-child {
+  padding-bottom: 28px;
+}
+.hero-wrap .hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--background-color, #fff9e8);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+/* content-block */
+.hero-wrap .content-block {
+  width: 49.5%;
+  margin-left: 130px;
+}
+.hero-wrap .content-block .heading {
+  width: 470px;
+  color: #171100;
+  font-family: Sen;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 6.8rem;
+  letter-spacing: -1.16px;
+  margin-bottom: 22px;
+}
+.hero-wrap .content-block .desc {
+  color: #5f5b53;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+.hero-wrap .content-block .cta-group {
+  display: flex;
+  margin: 38px 0 48px 0;
+}
+.hero-wrap .content-block .watch-video {
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-wrap .content-block .watch-video .play {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.09);
+}
+.hero-wrap .content-block .watch-video .play img {
+  padding-left: 4px;
+}
+.hero-wrap .content-block .btn-cta-group {
+  width: 180px;
+  height: 64px;
+  border-radius: 32px;
+  background: #ffb900;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+.hero-wrap .content-block .btn-cta-group:hover {
+  background-color: #171100;
+  transition: 0.1s;
+}
+.hero-wrap .content-block .watch-video span {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin-left: 14px;
+}
+.hero-wrap .content-block .stats-desc {
+  display: flex;
+  color: #5f5b53;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.hero-wrap .content-block .stats-desc p {
+  margin-right: 28px;
+}
+.hero-wrap .content-block .stats-desc strong {
+  color: #171100;
+  font-family: Sen;
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+  margin-right: 8px;
 }
